@@ -6,6 +6,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class PhoneBookTest {
@@ -17,6 +19,7 @@ public class PhoneBookTest {
         phoneBook = new PhoneBook();
         phoneBook.add( "+79260110101","ИвановИИ");
         phoneBook.add( "+74952001321","ФедоровСА");
+        phoneBook.add( "+71112001121","ПетровСС");
         phoneBook.add( "+85641238795","СуренАА");
     }
 
@@ -29,7 +32,7 @@ public class PhoneBookTest {
     @Test
     public void test_AddNewEntity() {
         System.out.println("Проверка добавления записи в PhoneBook");
-        int expected = 4;
+        int expected = 5;
         int result = phoneBook.add("+79260259874","СеменовАР");
         Assertions.assertEquals(expected, result);
     }
@@ -41,6 +44,19 @@ public class PhoneBookTest {
         String searchValue = fio;
         String result = phoneBook.findByName(searchValue);
         Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    public void test_SortingCollectionForPrint(){
+        List<String> expectedList = new LinkedList<>();
+        expectedList.add("ИвановИИ");
+        expectedList.add("ПетровСС");
+        expectedList.add("СуренАА");
+        expectedList.add("ФедоровСА");
+
+        List<String> resultList = phoneBook.getSortedNames();
+
+        Assertions.assertEquals(expectedList,resultList);
     }
 
     @ParameterizedTest

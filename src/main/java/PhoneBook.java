@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PhoneBook {
@@ -8,8 +9,8 @@ public class PhoneBook {
         this.memoryBook = new HashMap<>();
     }
 
-    public int add(String phoneNumber,String fio) {
-        memoryBook.put(phoneNumber,fio);
+    public int add(String phoneNumber, String fio) {
+        memoryBook.put(phoneNumber, fio);
         return memoryBook.size();
     }
 
@@ -24,5 +25,9 @@ public class PhoneBook {
                 .toList()
                 .get(0)
                 .getKey();
+    }
+
+    public List<String> getSortedNames() {
+        return null;
     }
 }
