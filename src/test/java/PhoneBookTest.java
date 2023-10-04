@@ -29,7 +29,7 @@ public class PhoneBookTest {
     @Test
     public void test_AddNewEntity() {
         System.out.println("Проверка добавления записи в PhoneBook");
-        int expected = 1;
+        int expected = 4;
         int result = phoneBook.add("+79260259874","СеменовАР");
         Assertions.assertEquals(expected, result);
     }

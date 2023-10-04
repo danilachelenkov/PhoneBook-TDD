@@ -14,6 +14,6 @@ public class PhoneBook {
     }
 
     public String findByNumber(String phoneNumber) {
-        return null;
+        return memoryBook.get(phoneNumber);
     }
 }
