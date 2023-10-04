@@ -28,6 +28,9 @@ public class PhoneBook {
     }
 
     public List<String> getSortedNames() {
-        return null;
+        List<String> list = memoryBook.values().stream().sorted().toList();
+        list.forEach(System.out::println);
+        return list;
+
     }
 }
