@@ -12,4 +12,8 @@ public class PhoneBook {
         memoryBook.put(phoneNumber,fio);
         return memoryBook.size();
     }
+
+    public String findByNumber(String phoneNumber) {
+        return null;
+    }
 }
