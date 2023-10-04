@@ -36,6 +36,15 @@ public class PhoneBookTest {
 
     @ParameterizedTest
     @MethodSource("test_AddNewEntityParams")
+    public void test_FindByName(String expected, String fio) {
+
+        String searchValue = fio;
+        String result = phoneBook.findByName(searchValue);
+        Assertions.assertEquals(expected, result);
+    }
+
+    @ParameterizedTest
+    @MethodSource("test_AddNewEntityParams")
     public void test_FindByNumber(String phoneNumber, String expected) {
         String searchValue = phoneNumber;
         String result = phoneBook.findByNumber(searchValue);
