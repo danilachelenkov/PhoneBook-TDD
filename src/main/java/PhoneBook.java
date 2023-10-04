@@ -18,6 +18,11 @@ public class PhoneBook {
     }
 
     public String findByName(String fio) {
-       return null;
+        return memoryBook.entrySet()
+                .stream()
+                .filter(x -> x.getValue().equals(fio))
+                .toList()
+                .get(0)
+                .getKey();
     }
 }
